@@ -59,10 +59,9 @@ export default function Button(props) {
 
   return (
     <button
-      href={props.href}
       className={className.join(" ")}
       style={props.style}
-      onCllick={onClick}
+      onClick={onClick}
     >
       {props.children}
     </button>

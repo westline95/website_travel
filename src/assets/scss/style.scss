@@ -1,7 +1,6 @@
 @import "mixins/banner";
 @include bsBanner("");
 
-
 // scss-docs-start import-stack
 // Configuration
 @import "functions";
@@ -50,3 +49,51 @@
 // Utilities
 @import "utilities/api";
 // scss-docs-end import-stack
+
+// addition
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+.brand-icon {
+  font-size: 26px;
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
+  color: $primary;
+  text-decoration: none;
+}
+
+.brand-circle {
+  vertical-align: middle;
+}
+
+header {
+  width: 100%;
+  border-bottom: 1px solid $indigo;
+  position: relative;
+
+  .navbar {
+    height: 80px;
+    .navbar-nav {
+      li.nav-item {
+        margin-left: 1rem;
+        a {
+          &.nav-link {
+            color: $black;
+            font-weight: 500;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            letter-spacing: 0.5px;
+            font-size: 17px;
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
+        &.active {
+          a {
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+}
