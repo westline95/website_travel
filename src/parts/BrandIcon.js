@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "elements/Button";
-import Circle from 'assets/images/brand_dot.svg';
+import Circle from 'assets/images/icon/brand_dot.svg';
 
 export default function BrandIcon() {
   return (

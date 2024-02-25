@@ -1,0 +1,13 @@
+{
+  "duration": "2",
+  "price": "480",
+  "bookingDateStart": "new Date()",
+  "bookingDateEnd": "new Date()",
+  "firstName": "Tsinmi",
+  "lastName": "Waslin",
+  "emailAddress": "westline.1995@gmail.com",
+  "phoneNumber": "081923012380",
+  "accountHolder": "Tsinmi Waslin",
+  "bankFrom": "BCA",
+  "proofPayment": "FileData()"
+}

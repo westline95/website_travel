@@ -18,14 +18,14 @@
   --#{$prefix}btn-hover-border-color: transparent;
   --#{$prefix}btn-box-shadow: #{$btn-box-shadow};
   --#{$prefix}btn-disabled-opacity: #{$btn-disabled-opacity};
-  --#{$prefix}btn-focus-box-shadow: 0 0 0 #{$btn-focus-width} rgba(var(--#{$prefix}btn-focus-shadow-rgb), .5);
+  --#{$prefix}btn-focus-box-shadow: 0 0 0 #{$btn-focus-width} rgba(var(--#{$prefix}btn-focus-shadow-rgb), 0.5);
   // scss-docs-end btn-css-vars
 
   display: inline-block;
-  padding: var(--#{$prefix}btn-padding-y) var(--#{$prefix}btn-padding-x);
+  padding: 0.55rem 2.5rem;
   font-family: var(--#{$prefix}btn-font-family);
   @include font-size(var(--#{$prefix}btn-font-size));
-  font-weight: var(--#{$prefix}btn-font-weight);
+  font-weight: 600;
   line-height: var(--#{$prefix}btn-line-height);
   color: var(--#{$prefix}btn-color);
   text-align: center;
@@ -34,11 +34,16 @@
   vertical-align: middle;
   cursor: if($enable-button-pointers, pointer, null);
   user-select: none;
-  border: var(--#{$prefix}btn-border-width) solid var(--#{$prefix}btn-border-color);
-  @include border-radius(var(--#{$prefix}btn-border-radius));
+  border: var(--#{$prefix}btn-border-width) solid
+    var(--#{$prefix}btn-border-color);
+  @include border-radius(7px);
   @include gradient-bg(var(--#{$prefix}btn-bg));
   @include box-shadow(var(--#{$prefix}btn-box-shadow));
   @include transition($btn-transition);
+
+  &.btn-shadow {
+    box-shadow: 0 7px 17px 2px rgba($color: $primary, $alpha: 0.35);
+  }
 
   &:hover {
     color: var(--#{$prefix}btn-hover-color);
@@ -61,7 +66,8 @@
     outline: 0;
     // Avoid using mixin so we can pass custom focus shadow properly
     @if $enable-shadows {
-      box-shadow: var(--#{$prefix}btn-box-shadow), var(--#{$prefix}btn-focus-box-shadow);
+      box-shadow: var(--#{$prefix}btn-box-shadow),
+        var(--#{$prefix}btn-focus-box-shadow);
     } @else {
       box-shadow: var(--#{$prefix}btn-focus-box-shadow);
     }
@@ -72,7 +78,8 @@
     outline: 0;
     // Avoid using mixin so we can pass custom focus shadow properly
     @if $enable-shadows {
-      box-shadow: var(--#{$prefix}btn-box-shadow), var(--#{$prefix}btn-focus-box-shadow);
+      box-shadow: var(--#{$prefix}btn-box-shadow),
+        var(--#{$prefix}btn-focus-box-shadow);
     } @else {
       box-shadow: var(--#{$prefix}btn-focus-box-shadow);
     }
@@ -93,7 +100,8 @@
     &:focus-visible {
       // Avoid using mixin so we can pass custom focus shadow properly
       @if $enable-shadows {
-        box-shadow: var(--#{$prefix}btn-active-shadow), var(--#{$prefix}btn-focus-box-shadow);
+        box-shadow: var(--#{$prefix}btn-active-shadow),
+          var(--#{$prefix}btn-focus-box-shadow);
       } @else {
         box-shadow: var(--#{$prefix}btn-focus-box-shadow);
       }
@@ -103,7 +111,8 @@
   .btn-check:checked:focus-visible + & {
     // Avoid using mixin so we can pass custom focus shadow properly
     @if $enable-shadows {
-      box-shadow: var(--#{$prefix}btn-active-shadow), var(--#{$prefix}btn-focus-box-shadow);
+      box-shadow: var(--#{$prefix}btn-active-shadow),
+        var(--#{$prefix}btn-focus-box-shadow);
     } @else {
       box-shadow: var(--#{$prefix}btn-focus-box-shadow);
     }
@@ -121,7 +130,6 @@
     @include box-shadow(none);
   }
 }
-
 
 //
 // Alternate buttons
@@ -160,7 +168,6 @@
   }
 }
 // scss-docs-end btn-variant-loops
-
 
 //
 // Link buttons
@@ -202,15 +209,24 @@
   // No need for an active state here
 }
 
-
 //
 // Button Sizes
 //
 
 .btn-lg {
-  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
+  @include button-size(
+    $btn-padding-y-lg,
+    $btn-padding-x-lg,
+    $btn-font-size-lg,
+    $btn-border-radius-lg
+  );
 }
 
 .btn-sm {
-  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
+  @include button-size(
+    $btn-padding-y-sm,
+    $btn-padding-x-sm,
+    $btn-font-size-sm,
+    $btn-border-radius-sm
+  );
 }
