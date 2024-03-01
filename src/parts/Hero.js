@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "elements/Button";
 import NumberFormatter from "utils/numberFormatter";
+import Fade from "react-reveal/Fade";
 
 import HeroImg from "assets/images/hero-img.jpg";
 import HeroFrame from "assets/images/frame-1.svg";
@@ -18,8 +19,9 @@ export default function Hero(props) {
 
   return (
     <section className="container pt-5 mt-5" style={{ marginBottom: "5rem" }}>
+      <Fade bottom>
       <div className="row align-items-center justify-content-between">
-        <div className="col-auto pr-5" style={{ width: 550 }}>
+        <div className="col-auto pr-5 mt-4" style={{ width: 550 }}>
           <h1
             className="mb-4 text-primary"
             style={{ fontWeight: 900, lineHeight: 1.4 }}
@@ -30,7 +32,7 @@ export default function Hero(props) {
           <p
             className="lh-base w-80 text-secondary"
             style={{ fontSize: "18px", marginBottom: "2.5rem" }}
-          >
+            >
             We provide what you need to enjoy your holiday with family. <br />
             Time to make another memorable moments. Your money can return but
             your time is not.
@@ -40,11 +42,11 @@ export default function Hero(props) {
             isPrimary
             hasShadow
             onClick={showMostPicked}
-          >
+            >
             Show Me Now
           </Button>
 
-          <div className="row mt-5">
+          <div className="row" style={{marginTop: "4rem"}}>
             <div className="col-auto" style={{ marginRight: 25 }}>
               <img
                 width="36"
@@ -113,6 +115,7 @@ export default function Hero(props) {
           </div>
         </div>
       </div>
+      </Fade>
     </section>
   );
 }

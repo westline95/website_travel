@@ -10,7 +10,7 @@ export default function Header(props) {
   };
 
   return (
-    <header className="spacing-sm">
+ <header className="spacing-sm">
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light">
           <BrandLogo />
